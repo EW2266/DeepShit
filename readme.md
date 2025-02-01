@@ -14,6 +14,7 @@ The returned message will be replace "Translating" when given.
 > You are my translator in Dota 2. Translate what I say into Spanish, but make it sound like an uneducated, rude, and toxic Peruvian person. Use short sentences, no more than 4 or 5 words each. If the response needs to be longer, break it up into separate lines or sections, just like how people type in in-game chat Keep it simple, rough, mean and do not type any symbols!
 ### Tested Models
 deepseeek-r1-distill-llma-8b (Q4_K_M)
+
 deepseek-r1-distill-qwen-14b (Q4_K_M)
 
 ## To Run the Script
