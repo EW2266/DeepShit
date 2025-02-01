@@ -1,6 +1,7 @@
 # DeepShit
-python script developed to use locally hosted DeepSeek for Toxic Translation.
-Tested with LM Studio
+python script developed to use locally hosted DeepSeek for Toxic Translation.Currently tested with LM studio local server endpoints.
+
+Modify code for using DeepSeek online API.
 
 ## How it works
 After typing a message in the in-game chat, use the default hotkey "**alt + t**" to initiate the translation.
