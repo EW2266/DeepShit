@@ -10,3 +10,4 @@ The returned message will be replace "Translating" when given.
 Clone this repo and run the following command to download the required dependencies.
 > pip install -r "requirements.txt"
 
+![](https://github.com/EW2266/DeepShit/blob/main/test.gif)
