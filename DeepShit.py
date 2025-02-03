@@ -46,14 +46,11 @@ def translate_with_llm(text: str) -> str:
 
 def on_activate():
     pyautogui.hotkey(*ALL_KEYS)
-    time.sleep(0.2)
+    time.sleep(0.3)
     pyautogui.hotkey(*COPY_KEYS)
-    time.sleep(0.2)
-    pyautogui.hotkey(*ALL_KEYS)
-    time.sleep(0.2)
-    pyautogui.hotkey(*DELETE_KEY)
-    time.sleep(0.2)
+    time.sleep(0.3)
     selected_text = pyperclip.paste().strip()
+    print(selected_text)
 
     if not selected_text:
         return
@@ -62,11 +59,25 @@ def on_activate():
 
     translation = translate_with_llm(selected_text)
 
-    pyperclip.copy(translation)
+    translation_table = str.maketrans('', '', '"¿?!¡')
+
+    translation = translation.translate(translation_table)
+
+    lines = translation.split('\\n') 
 
     pyautogui.hotkey(*ALL_KEYS)
-    pyautogui.hotkey(*PASTE_KEYS)
+    time.sleep(0.3)
 
+    for line in lines:
+        pyperclip.copy(line)
+        pyautogui.hotkey(*PASTE_KEYS)
+        time.sleep(0.5)
+
+        pyautogui.press('enter')
+        time.sleep(0.5)
+
+        pyautogui.press('enter')
+        time.sleep(0.5)
 
 hotkey = keyboard.HotKey(
     keyboard.HotKey.parse('<alt>+t'),
